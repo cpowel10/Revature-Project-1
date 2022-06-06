@@ -55,22 +55,22 @@ Spring Framework, SpringBoot, Spring Data JPA, AWS, Docker, Postgresql
     * Does not require input
     * GET Mapping
     * allowed roles - **ADMIN** only
-6. **Get current the users cart:** _http://ec2-3-95-55-213.compute-1.amazonaws.com:8088/getmycart/{userid}_
+6. **Get the current users cart:** _http://ec2-3-95-55-213.compute-1.amazonaws.com:8088/getmycart/{userid}_
     * Requires 1 path variable
-      * userId
+      * int userId
     * GET Mapping
     * allowed roles - ADMIN,CUSTOMER,EMPLOYEE
       * Must be signed in as user being access
 7. **Add Product to Cart** _http://ec2-3-95-55-213.compute-1.amazonaws.com:8088/addproducttocart/{userid}/{itemId}_
     * Requires 2 path variables
-      * userId
-      * itemId
+      * int userId
+      * int itemId
     * PUT Mapping
     * allowed roles - ADMIN,CUSTOMER,EMPLOYEE
       * Must be signed in as user being access
 8. **Delete User:** _http://ec2-3-95-55-213.compute-1.amazonaws.com:8088/deleteuser/{userid}_
    * Requires 1 path variable
-     * userId
+     * int userId
    * DELETE Mapping
    * allowed roles - ADMIN,CUSTOMER,EMPLOYEE
        * Must be signed in as user being access
@@ -79,14 +79,14 @@ Spring Framework, SpringBoot, Spring Data JPA, AWS, Docker, Postgresql
     * GET Mapping
 10. **Checkout:** _http://ec2-3-95-55-213.compute-1.amazonaws.com:8088/checkout/{userid}_
     * Requires 1 Path variable
-      * userId
+      * int userId
     * PUT Mapping
     * Will delete the item from table after checkout
     * allowed roles - ADMIN,CUSTOMER,EMPLOYEE
        * Must be signed in as user being access
 11. **Empty Cart** _http://ec2-3-95-55-213.compute-1.amazonaws.com:8088/emptycart/{userid}_
     * Requires 1 Path variable
-      * userId
+      * int userId
     * PUT Mapping
     * Will not delete the item from table after checkout
     * allowed roles - ADMIN,CUSTOMER,EMPLOYEE
@@ -99,7 +99,7 @@ Spring Framework, SpringBoot, Spring Data JPA, AWS, Docker, Postgresql
     * allowed roles - **ADMIN** only
 2. **Delete Item:** _http://ec2-3-95-55-213.compute-1.amazonaws.com:8088/deleteitem/{itemid}_
     * requires 1 Path variable
-      * itemId
+      * int itemId
     * DELETE Mapping
     * allowed roles - **ADMIN** only
 3. **Update Item:** _http://ec2-3-95-55-213.compute-1.amazonaws.com:8088/updateitem_
